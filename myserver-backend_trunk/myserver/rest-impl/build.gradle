@@ -1,0 +1,39 @@
+apply plugin: 'pegasus' // defines compile project()
+
+//buildDir = '../../build/rest-impl'
+
+ext.apiProject = project(':myserver:rest-api')
+dependencies {
+    // REST model related libs should also be defined in rest-api's build.gradle
+    //dataModel spec.linkedin.pegasus.restliCommon  // EmptyRecord
+
+    // ComplexKeyResourceTemplate, CollectionResourceTemplate, @RestLiCollection
+    compile spec.linkedin.pegasus.restliServer
+    // @Component
+    compile spec.springFramework.springContext
+    // RowMapper
+    compile spec.springFramework.springJdbc
+    // ComboPooledDataSource
+    compile spec.mchange.c3p0
+    // oracle.jdbc.driver.OracleDriver
+    // compile spec.oracle.jdbc.ojdbc14 // this doesn't work
+    compile files('/Applications/oracle/product/instantclient_64/11.2.0.4.0/jdbc/lib/ojdbc6.jar') // download it first
+
+    compile spec.google.guava.guava
+
+    compile project(':myserver:rest-api')
+}
+/*
+configurations {
+    testArtifacts.extendsFrom testRuntime
+}
+
+task testJar(type: Jar){
+    from sourceSets.test.output
+    classifier = 'tests'
+}
+
+artifacts {
+    testArtifacts testJar
+}
+*/

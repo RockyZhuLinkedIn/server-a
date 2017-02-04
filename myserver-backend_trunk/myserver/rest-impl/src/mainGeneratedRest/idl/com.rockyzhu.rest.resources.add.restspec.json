@@ -1,0 +1,27 @@
+{
+  "name" : "add",
+  "namespace" : "com.rockyzhu.rest.resources",
+  "path" : "/add",
+  "schema" : "com.rockyzhu.myserver.api.AddEntity",
+  "doc" : "generated from: com.rockyzhu.myserver.rest.resources.AddResource",
+  "collection" : {
+    "identifier" : {
+      "name" : "addId",
+      "type" : "com.rockyzhu.myserver.api.AddKey",
+      "params" : "com.linkedin.restli.common.EmptyRecord"
+    },
+    "supports" : [ "create", "delete", "get", "update" ],
+    "methods" : [ {
+      "method" : "create"
+    }, {
+      "method" : "get"
+    }, {
+      "method" : "update"
+    }, {
+      "method" : "delete"
+    } ],
+    "entity" : {
+      "path" : "/add/{addId}"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+    <display-name>My First Web App</display-name>
+    <description>Reverse or Add</description>
+
+    <!-- spring dependency injection for restliRequestHandler used instances
+         instances defined in beans.xml but not used by restliRequestHandler will not be instantiated here -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/beans.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- spring dependency injection for instances not used by restliRequestHandler -->
+    <listener>
+        <listener-class>com.rockyzhu.myserver.servlet.MyServletContextListener</listener-class>
+    </listener>
+
+    <!-- servlet definition -->
+    <servlet>
+        <display-name>Restli Spring Servlet</display-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+        <servlet-name>restliRequestHandler</servlet-name>    <!-- id="restliRequestHandler" defined in web.xml -->
+        <async-supported>true</async-supported>   <!-- default true for gradle 3.1+ -->
+        <load-on-startup>1</load-on-startup>      <!-- load all components of restliRequestHandler in beans.xml now -->
+    </servlet>
+
+    <!-- servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>restliRequestHandler</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

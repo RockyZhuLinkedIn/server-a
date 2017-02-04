@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+//buildDir = '../../build/kafka-impl'
+
+dependencies {
+    compile spec.apache.avro.avro
+    compile spec.apache.kafka.kafka
+    compile spec.io.confluent.kafkaAvroSerializer
+    compile spec.apache.kafka.connectRuntime
+    compile spec.apache.kafka.kafkaClients
+    compile spec.apache.kafka.kafkaStreams
+    compile "com.rockyzhu.avro:avro-schema:0.1"
+    compile "com.rockyzhu.avro:avro-converter:0.1"
+}

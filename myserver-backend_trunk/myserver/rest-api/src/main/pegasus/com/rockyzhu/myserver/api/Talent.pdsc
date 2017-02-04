@@ -1,0 +1,73 @@
+{
+  "type": "record",
+  "name": "Talent",
+  "namespace": "com.rockyzhu.myserver.api",
+  "doc": "Buddy data schema",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "doc": "The student's first name"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "doc": "The student's last name"
+    },
+    {
+      "name": "middleName",
+      "type": "string",
+      "doc": "The student's middle name",
+      "optional": true
+    },
+    {
+      "name" : "gender",
+      "type": {
+        "name": "Gender",
+        "type": "enum",
+        "symbols":  ["MALE", "FEMALE"],
+        "symbolDocs": {
+          "MALE": "male",
+          "FEMALE": "female"
+        }
+      }
+    },
+    {
+      "name" : "country",
+      "type": {
+        "name": "Country",
+        "type": "enum",
+        "symbols":  ["USA", "CHN", "HK", "TW"],
+        "symbolDocs": {
+          "USA": "United States of America",
+          "CHN": "China",
+          "HK": "Hong Kong",
+          "TW": "Taiwan"
+        }
+      }
+    },
+    {
+      "name": "zipCode",
+      "type": "string",
+      "doc": "the talent's zip code",
+      "optional": true
+    },
+    {
+      "name": "emailAddresses",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "The email address of this person.",
+      "default": []
+    },
+    {
+      "name": "phoneNumbers",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "The phone numbers of this person."
+    }
+  ]
+}

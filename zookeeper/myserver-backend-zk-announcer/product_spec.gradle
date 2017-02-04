@@ -1,0 +1,13 @@
+ext.spec = [
+    'linkedin': [
+        'pegasus': [
+            'd2': 'com.linkedin.pegasus:d2:' + pegasusVersion,
+            'restCommon': 'com.linkedin.pegasus:restli-common:' + pegasusVersion
+        ]
+    ],
+    'googlecode': [
+        'jsonSimple': [
+            'jsonSimple': 'com.googlecode.json-simple:json-simple:' + googlecodeVerison
+        ]
+    ]
+]

@@ -1,0 +1,15 @@
+ext.spec = [
+    'apache': [
+        'httpcomponents': [
+            'httpclient': 'org.apache.httpcomponents:httpclient:' + httpClientVersion
+        ],
+        'avro': [
+            'avro': 'org.apache.avro:avro:' + avroVersion
+        ]
+    ],
+    'google': [
+        'guava': [
+            'guava': 'com.google.guava:guava:' + guavaVersion
+        ]
+    ]
+]

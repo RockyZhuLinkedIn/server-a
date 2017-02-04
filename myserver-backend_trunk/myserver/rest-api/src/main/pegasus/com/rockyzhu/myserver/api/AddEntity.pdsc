@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "AddEntity",
+  "namespace": "com.rockyzhu.myserver.api",
+  "doc": "AddEntity data schema",
+  "fields": [
+    {
+      "name": "a",
+      "type": "int",
+      "optional": true,
+      "doc": "first adder"
+    },
+    {
+      "name": "b",
+      "type": "int",
+      "optional": true,
+      "doc": "second adder"
+    },
+    {
+      "name": "result",
+      "type": "int",
+      "optional": true,
+      "doc": "result"
+    }
+  ]
+}

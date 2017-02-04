@@ -1,0 +1,76 @@
+{
+  "models" : [ {
+    "type" : "record",
+    "name" : "AddEntity",
+    "namespace" : "com.rockyzhu.myserver.api",
+    "doc" : "AddEntity data schema",
+    "fields" : [ {
+      "name" : "a",
+      "type" : "int",
+      "doc" : "first adder",
+      "optional" : true
+    }, {
+      "name" : "b",
+      "type" : "int",
+      "doc" : "second adder",
+      "optional" : true
+    }, {
+      "name" : "result",
+      "type" : "int",
+      "doc" : "result",
+      "optional" : true
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "AddKey",
+    "namespace" : "com.rockyzhu.myserver.api",
+    "doc" : "AddKey data schema",
+    "fields" : [ {
+      "name" : "a",
+      "type" : "int",
+      "doc" : "first adder",
+      "optional" : true
+    }, {
+      "name" : "b",
+      "type" : "int",
+      "doc" : "second adder",
+      "optional" : true
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "EmptyRecord",
+    "namespace" : "com.linkedin.restli.common",
+    "doc" : "An literally empty record.  Intended as a marker to indicate the absence of content where a record type is required.  If used the underlying DataMap *must* be empty, EmptyRecordValidator is provided to help enforce this.  For example,  CreateRequest extends Request<EmptyRecord> to indicate it has no response body.   Also, a ComplexKeyResource implementation that has no ParamKey should have a signature like XyzResource implements ComplexKeyResource<XyzKey, EmptyRecord, Xyz>.",
+    "fields" : [ ],
+    "validate" : {
+      "com.linkedin.restli.common.EmptyRecordValidator" : { }
+    }
+  } ],
+  "schema" : {
+    "name" : "add",
+    "namespace" : "com.rockyzhu.rest.resources",
+    "path" : "/add",
+    "schema" : "com.rockyzhu.myserver.api.AddEntity",
+    "doc" : "generated from: com.rockyzhu.myserver.rest.resources.AddResource",
+    "collection" : {
+      "identifier" : {
+        "name" : "addId",
+        "type" : "com.rockyzhu.myserver.api.AddKey",
+        "params" : "com.linkedin.restli.common.EmptyRecord"
+      },
+      "supports" : [ "create", "delete", "get", "update" ],
+      "methods" : [ {
+        "method" : "create"
+      }, {
+        "method" : "get"
+      }, {
+        "method" : "update"
+      }, {
+        "method" : "delete"
+      } ],
+      "entity" : {
+        "path" : "/add/{addId}"
+      }
+    }
+  }
+}

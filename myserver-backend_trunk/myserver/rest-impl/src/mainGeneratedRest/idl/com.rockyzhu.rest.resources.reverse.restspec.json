@@ -1,0 +1,20 @@
+{
+  "name" : "reverse",
+  "namespace" : "com.rockyzhu.rest.resources",
+  "path" : "/reverse",
+  "schema" : "com.rockyzhu.myserver.api.Buddy",
+  "doc" : "generated from: com.rockyzhu.myserver.rest.resources.ReverseResource",
+  "collection" : {
+    "identifier" : {
+      "name" : "reverseId",
+      "type" : "long"
+    },
+    "supports" : [ "get" ],
+    "methods" : [ {
+      "method" : "get"
+    } ],
+    "entity" : {
+      "path" : "/reverse/{reverseId}"
+    }
+  }
+}

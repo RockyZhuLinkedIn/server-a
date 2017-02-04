@@ -1,0 +1,61 @@
+ext.spec = [
+    // https://repo1.maven.org/maven2/com/linkedin/pegasus/
+    'linkedin' : [
+        'pegasus' : [
+            'gradlePlugins': 'com.linkedin.pegasus:gradle-plugins:' + pegasusVersion,
+            'data' : 'com.linkedin.pegasus:data:' + pegasusVersion,
+            'restliCommon' : 'com.linkedin.pegasus:restli-common:' + pegasusVersion,
+            'restliClient' : 'com.linkedin.pegasus:restli-client:' + pegasusVersion,
+            'restliServer' : 'com.linkedin.pegasus:restli-server:' + pegasusVersion,
+            'r2FilterCompression' : 'com.linkedin.pegasus:r2-filter-compression:'+ pegasusVersion,
+            'restliSpringBridge' : 'com.linkedin.pegasus:restli-spring-bridge:' + pegasusVersion
+        ]
+    ],
+    'google': [
+        'guava': [
+            'guava': 'com.google.guava:guava:' + guavaVersion
+        ]
+    ],
+    'oracle': [
+        'jdbc': [
+            'ojdbc14': 'com.oracle.jdbc:ojdbc7:' + oracleDriverVersion
+        ]
+    ],
+    // https://repo1.maven.org/maven2/org/springframework/
+    'springFramework' : [
+        'springContext': 'org.springframework:spring-context:' + springVersion,
+        'springWeb': 'org.springframework:spring-web:' + springVersion,
+        'springJdbc': 'org.springframework:spring-jdbc:' + springVersion
+    ],
+    'mchange': [
+        'c3p0': 'com.mchange:c3p0:' + c3p0Version
+    ],
+    'apache': [
+        'kafka': [
+            'kafka': 'org.apache.kafka:kafka_2.10:' + kafkaVersion,
+            'connectRuntime': 'org.apache.kafka:connect-runtime:' + kafkaVersion,  // ShutdownableThread
+            'kafkaStreams': 'org.apache.kafka:kafka-streams:' + kafkaVersion,
+            'kafkaClients': 'org.apache.kafka:kafka-clients:' + kafkaVersion
+        ],
+        'avro': [
+            'avro': 'org.apache.avro:avro:' + avroVersion
+        ]
+    ],
+    'io': [
+        'confluent': [
+            'kafkaAvroSerializer': 'io.confluent:kafka-avro-serializer:' + kafkaAvroSerializerVersion
+            //'kafkaAvroDeserializer': 'io.confluent:kafka-avro-deserializer:' + kafkaAvroSerializerVersion
+        ]
+    ],
+    // https://repo1.maven.org/maven2/org/eclipse/jetty/
+    'eclipse' : [
+        'jetty': [
+            'jettyAll': 'org.eclipse.jetty.aggregate:jetty-all:' + jettyVersion,
+            'jettyServlet': 'org.eclipse.jetty:jetty-servlet:' + jettyVersion,
+            'jettyWebapp': 'org.eclipse.jetty:jetty-webapp:' + jettyVersion
+        ]
+    ],
+    'testng': [
+        'testng': 'org.testng:testng:' + testngVersion
+    ]
+]

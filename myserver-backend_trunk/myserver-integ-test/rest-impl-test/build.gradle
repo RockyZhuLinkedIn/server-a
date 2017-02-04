@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+dependencies {
+//  testCompile project(path: ':myserver:rest-impl', configuration: 'testArtifacts')
+  testCompile project(path: ':myserver:rest-impl')
+  testCompile project(path: ':myserver:config-impl')
+  testCompile spec.testng.testng
+}

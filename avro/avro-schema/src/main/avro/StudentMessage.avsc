@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "StudentMessage",
+  "namespace": "com.rocky.messages.sample",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "fenShu",
+      "type": "int"
+    }
+  ]
+}

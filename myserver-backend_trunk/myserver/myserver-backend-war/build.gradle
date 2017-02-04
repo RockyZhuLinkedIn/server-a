@@ -1,0 +1,24 @@
+apply plugin: 'war'  // compile(), war.*
+
+war.archiveName "myserver-backend.war"
+// ~/work/components/myserver-backend_trunk/myserver/myserver-backend-war/build/libs/myserver-backend.war
+
+project.archivesBaseName = "myserver-backend"
+// ~/.m2/repository/com/rockyzhu/myserver/myserver-backend-war/0.1/myserver-backend-0.1.war
+
+//buildDir = '../../build/server-a-war'
+
+dependencies {
+    // FilterChains, SimpleLoggingFilter, ServerCompressionFilter
+    compile spec.linkedin.pegasus.r2FilterCompression
+    // RestliHttpRequestHandler, SpringInjectResourceFactory
+    compile spec.linkedin.pegasus.restliSpringBridge
+    compile project(':myserver:rest-impl')               // needed for accessing resources
+    compile project(':myserver:kafka-impl')
+    compile project(':myserver:config-impl')
+    compile project(':myserver:factories')
+
+    // DevServer
+    compile spec.eclipse.jetty.jettyServlet
+    compile spec.eclipse.jetty.jettyWebapp
+}

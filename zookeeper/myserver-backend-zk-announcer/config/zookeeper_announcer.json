@@ -1,0 +1,38 @@
+{
+  "zkAnnouncers" : [
+    {
+      "uri" : "http://localhost:7070",
+      "cluster" : "MyFirstService",
+      "partitionData" : {
+        "0" : {
+          "weight" : "1.0"
+        }
+      }
+    },
+    {
+      "uri" : "http://localhost:7071",
+      "cluster" : "MyFirstService",
+      "partitionData" : {
+        "0" : {
+          "weight" : "1.0"
+        }
+      }
+    },
+    {
+      "uri" : "http://localhost:7072",
+      "cluster" : "MyFirstService",
+      "partitionData" : {
+        "0" : {
+          "weight" : "1.0"
+        }
+      }
+    }
+  ],
+
+  "zkConnectString" : "localhost:2181",
+  "zkSessionTimeout" : 5000,
+  "zkBasePath" : "/d2",
+  "zkRetryLimit" : 10,
+  "announcerStartTimeout" : 5000,
+  "announcerShutdownTimeout" : 5000
+}

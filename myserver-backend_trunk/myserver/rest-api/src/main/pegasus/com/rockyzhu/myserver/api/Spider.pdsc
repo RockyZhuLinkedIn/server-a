@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "Spider",
+  "namespace": "com.rockyzhu.myserver.api",
+  "doc": "Spider data schema",
+  "fields": [
+    {
+      "name": "spiderId",
+      "type": "long",
+      "doc": "unique identifier for spider"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "active",
+      "type": "boolean"
+    },
+    {
+      "name": "type",
+      "type": {
+        "name": "SpiderType",
+        "type": "enum",
+        "symbols": ["ABC", "XYZ"]
+      }
+    }
+  ]
+}

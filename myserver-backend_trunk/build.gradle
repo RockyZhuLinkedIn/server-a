@@ -1,0 +1,48 @@
+apply from: 'product_spec.gradle'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    // add rest.li's gradle plugins so they can be used throughout project
+    dependencies {
+        classpath 'com.linkedin.pegasus:gradle-plugins:' + pegasusVersion
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+    apply plugin: 'maven'
+
+    afterEvaluate {
+        if (project.plugins.hasPlugin('java')) {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+        }
+    }
+
+    repositories {
+        mavenLocal()    // ~/.m2/repository/
+        mavenCentral()  // https://repo1.maven.org/maven2/
+        maven {
+          url "http://packages.confluent.io/maven/"
+        }
+        // this just doens't work for ojdbc
+        maven {
+            credentials {
+                username "rocky.a.zhu@gmail.com"
+                password "Zhk840923"
+            }
+            url "https://maven.oracle.com/"
+        }
+    }
+    project.group = 'com.rockyzhu.myserver'
+    project.version = '0.1'
+}

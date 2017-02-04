@@ -1,0 +1,7 @@
+include 'myserver:rest-api'
+include 'myserver:rest-impl'
+include 'myserver:kafka-impl'
+include 'myserver:config-impl'
+include 'myserver:factories'
+include 'myserver:myserver-backend-war'
+include 'myserver-integ-test:rest-impl-test'

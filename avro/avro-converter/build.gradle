@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply from: 'product_spec.gradle'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile spec.apache.avro.avro
+    compile "com.rockyzhu.avro:avro-schema:0.1"
+}
+
+// ~/.m2/repository/com/rockyzhu/avro/avro-converter/0.1/avro-converter-0.1.jar
+project.group = 'com.rockyzhu.avro'
+project.version = '0.1'

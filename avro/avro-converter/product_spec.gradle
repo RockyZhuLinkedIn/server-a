@@ -1,0 +1,7 @@
+ext.spec = [
+    'apache': [
+        'avro': [
+            'avro': 'org.apache.avro:avro:' + avroVersion
+        ]
+    ]
+]

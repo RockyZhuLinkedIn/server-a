@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply from: 'product_spec.gradle'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile spec.apache.httpcomponents.httpclient
+    compile spec.apache.avro.avro
+    compile spec.google.guava.guava
+}

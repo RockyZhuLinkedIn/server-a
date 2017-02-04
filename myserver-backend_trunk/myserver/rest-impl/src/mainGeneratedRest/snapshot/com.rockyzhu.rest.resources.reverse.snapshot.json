@@ -1,0 +1,33 @@
+{
+  "models" : [ {
+    "type" : "record",
+    "name" : "Buddy",
+    "namespace" : "com.rockyzhu.myserver.api",
+    "doc" : "Buddy data schema",
+    "fields" : [ {
+      "name" : "message",
+      "type" : "string",
+      "doc" : "An example 'message' field of type string"
+    } ]
+  } ],
+  "schema" : {
+    "name" : "reverse",
+    "namespace" : "com.rockyzhu.rest.resources",
+    "path" : "/reverse",
+    "schema" : "com.rockyzhu.myserver.api.Buddy",
+    "doc" : "generated from: com.rockyzhu.myserver.rest.resources.ReverseResource",
+    "collection" : {
+      "identifier" : {
+        "name" : "reverseId",
+        "type" : "long"
+      },
+      "supports" : [ "get" ],
+      "methods" : [ {
+        "method" : "get"
+      } ],
+      "entity" : {
+        "path" : "/reverse/{reverseId}"
+      }
+    }
+  }
+}

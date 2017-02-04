@@ -1,0 +1,7 @@
+apply plugin: 'java'
+
+//buildDir = '../../build/config-impl'
+
+dependencies {
+    compile project(path: ':myserver:rest-api', configuration: 'restClient')
+}
